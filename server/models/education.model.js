@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const EducationSchema = new mongoose.Schema({
   degree: {
     type: String,
-    required: true, // e.g., Bachelor of Technology
+    required: false, // e.g., Bachelor of Technology
   },
   fieldOfStudy: {
     type: String,

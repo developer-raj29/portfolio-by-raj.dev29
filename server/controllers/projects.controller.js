@@ -30,6 +30,7 @@ exports.ProjectADD = async (req, res) => {
       features,
       liveURL,
       githubURL,
+      category,
     } = req.body;
 
     const imageFile = req.files?.imageURL;
@@ -42,7 +43,8 @@ exports.ProjectADD = async (req, res) => {
       !imageFile ||
       !features ||
       !liveURL ||
-      !githubURL
+      !githubURL ||
+      !category
     ) {
       return res.status(400).json({
         success: false,
@@ -62,6 +64,7 @@ exports.ProjectADD = async (req, res) => {
       description,
       startDate,
       endDate,
+      category,
       technologies: JSON.parse(technologies), // if sent as JSON string from frontend
       features: JSON.parse(features), // same for features
       imageURL: uploadedImage.secure_url,
@@ -98,6 +101,7 @@ exports.ProjectUPDATE = async (req, res) => {
       features,
       liveURL,
       githubURL,
+      category,
     } = req.body;
 
     const imageFile = req.files?.imageURL;
@@ -110,7 +114,8 @@ exports.ProjectUPDATE = async (req, res) => {
       !technologies ||
       !features ||
       !liveURL ||
-      !githubURL
+      !githubURL ||
+      !category
     ) {
       return res.status(400).json({
         success: false,
@@ -132,6 +137,7 @@ exports.ProjectUPDATE = async (req, res) => {
       description,
       startDate,
       endDate,
+      category,
       technologies: parsedTechnologies,
       features: parsedFeatures,
       liveURL,

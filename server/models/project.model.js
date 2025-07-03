@@ -12,6 +12,11 @@ const ProjectSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    category: {
+      type: String,
+      enum: ["Full-stack", "Frontend", "Backend", "HTML/CSS"],
+      default: "HTML/CSS",
+    },
     startDate: {
       type: Date,
       required: true,

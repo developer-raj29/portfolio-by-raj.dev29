@@ -36,13 +36,7 @@ exports.EducationADD = async (req, res) => {
     const instituteImage = req.files?.instituteImage;
     let imageUrl = "";
 
-    if (
-      !degree ||
-      !fieldOfStudy ||
-      !institutionName ||
-      !location ||
-      !startDate
-    ) {
+    if (!fieldOfStudy || !institutionName || !location || !startDate) {
       return res.status(400).json({
         success: false,
         message: "Required fields missing",
